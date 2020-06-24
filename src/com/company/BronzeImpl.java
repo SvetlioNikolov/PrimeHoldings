@@ -11,6 +11,9 @@ public class BronzeImpl extends CardImpl {
 
     @Override
     public void setInitialDiscountRate(int turnover) {
+        if (turnover < 0) {
+            throw new IllegalArgumentException(INVALID_PRODUCT_MESSAGE);
+        }
         if (turnover > 100 && turnover < 300) {
             initialDiscountRate = 1;
         } else if (turnover > 300) {

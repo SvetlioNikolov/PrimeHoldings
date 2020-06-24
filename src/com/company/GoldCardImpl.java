@@ -10,6 +10,9 @@ public class GoldCardImpl extends CardImpl {
 
     @Override
     public void setInitialDiscountRate(int turnover) {
+        if (turnover < 0) {
+            throw new IllegalArgumentException(INVALID_PRODUCT_MESSAGE);
+        }
         int times = turnover / 100;
         if (times > 10) {
             times = 10;

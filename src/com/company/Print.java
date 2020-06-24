@@ -16,10 +16,18 @@ public class Print {
         double discountRate = gold.initialDiscountRate;
         printCommon(value, discountRate);
     }
-    //Because this is repeated I took it out in a method
+
     private void printCommon(double value, double discountRate) {
         double discount = value * (discountRate * 0.01);
         double total = value - discount;
-        System.out.printf("Purchase value: $%.2f \nDiscount rate: %.2f%c\nDiscount: %.2f\nTotal: $%.2f", value, discountRate, '%', discount, total);
+        System.out.printf("Purchase value: $%.2f \n" +
+                        "Discount rate: %.2f%c\n" +
+                        "Discount: %.2f\n" +
+                        "Total: $%.2f",
+                value,
+                discountRate,
+                '%',
+                discount,
+                total);
     }
 }
