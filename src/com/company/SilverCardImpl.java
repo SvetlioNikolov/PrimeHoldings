@@ -11,7 +11,7 @@ public class SilverCardImpl extends CardImpl {
     @Override
     public void setInitialDiscountRate(int turnover) {
         if (turnover < 0) {
-            throw new IllegalArgumentException(INVALID_PRODUCT_MESSAGE);
+            throw new IllegalArgumentException(INVALID_TURNOVER_MESSAGE);
         }
         if (turnover > 300) {
             initialDiscountRate = 3.5;
